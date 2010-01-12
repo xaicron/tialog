@@ -5,6 +5,7 @@
     <title><? block title => 'Amon' ?></title>
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=314" />
     <link href="<?= uri_for('/static/css/main.css') ?>" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">google.load("jquery", "1.3");</script>
