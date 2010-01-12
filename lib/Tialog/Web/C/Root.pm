@@ -7,7 +7,7 @@ sub index {
 
 sub list {
     (my $sub_title = c->request->path_info) =~ s|/\+|#|g;
-    render("list.mt", $sub_title, c->list);
+    render("list.mt", $sub_title, c->list(1));
 }
 
 sub log {

@@ -11,7 +11,7 @@
 ? block content => sub {
             <ul>
 ?           for my $line (@$list) {
-                <li><?= encoded_string  decode_entities $line ?></li>
+                <li><?= encoded_string  clickable decode_entities $line ?></li>
 ?           }
             </ul>
 ? };

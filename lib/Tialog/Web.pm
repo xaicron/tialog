@@ -5,10 +5,10 @@ use Amon::Web -base => (
 );
 
 sub list {
-    my ( $c ) = @_;
+    my ( $c, $reverse ) = @_;
     my ( $dir, $path ) = $c->uri2path;
     
-    my $sort_cb = shift || sub { $a cmp $b };
+    my $sort_cb = $reverse ? sub { $b cmp $a } : sub { $a cmp $b };
     opendir my $dh, $dir or die "$dir: $!";
     return [
         map {
