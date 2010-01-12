@@ -1,0 +1,7 @@
++{
+    log_path => '/path/to/tiarra/log',
+    keyword => ['oppai'],
+#    auth => {
+#        kogaidan => 'dankogai',
+#    },
+}

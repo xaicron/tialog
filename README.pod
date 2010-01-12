@@ -1,0 +1,33 @@
+=head1 tialog
+
+tiarra の log をブラウザで見るやつ
+Amon base
+
+=head1 INSTALL
+
+$ git clone git://github.com/xaicron/tialog.git
+
+=head1 SYNOPSIS
+
+config.pl.sampleをconfig.plにリネームして適当にいじる
+
+$ plackup tialog.psgi -p 1986
+
+=over 4
+
+=item log_path
+
+tiarra の log が保存されいてるパス
+
+=item keyword
+
+ここに書いたやつの色が変わる
+
+=item auth
+
+有効にしたらDigest認証されるようになる
+user => pass のように記述する
+
+=back
+
+=cut
