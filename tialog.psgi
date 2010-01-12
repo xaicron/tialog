@@ -6,6 +6,8 @@ use File::Basename qw/dirname/;
 my $config = do File::Spec->catfile(dirname(__FILE__), 'config.pl') or die "cannot load configuration file";
 $config->{keyword} ||= [];
 
+delete $config->{auth} if $ENV{HARNESS_ACTIVE};
+
 builder {
     enable 'Static',
         path => qr{^/static/|^/favicon.ico},

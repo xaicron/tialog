@@ -12,9 +12,8 @@ sub list {
     opendir my $dh, $dir or die "$dir: $!";
     return [
         map {
-            my $file = $_;
-            s/#/+/g;
-            { name => $file, uri => "$path/$_" };
+            (my $file = $_) =~ s/#/+/g;
+            { name => $_, uri => "$path/$file" };
         } sort { $sort_cb->() } grep !/^\.{1,2}$/ => readdir $dh
     ];
 }
@@ -25,10 +24,11 @@ sub log {
     
     open my $fh, '<:utf8', $file or die "$file: $!";
     my @list = sort {$b cmp $a} map {
-        s/[[:cntrl:]]//smg;
-        s/<#[^>]+:([^>]+)>/[$1]/;
-        s/>#[^<]+:([^<]+)</[$1]/;
-        $_;
+        my $file = $_;
+        $file =~ s/[[:cntrl:]]//smg;
+        $file =~ s/<#[^>]+:([^>]+)>/[$1]/;
+        $file =~ s/>#[^<]+:([^<]+)</[$1]/;
+        $file;
     } grep !/^\d{2}:\d{2}:\d{2} (?:[+!-] |[\w_-]+ -> [\w_-]+$)/ => <$fh>;
     return \@list;
 }
