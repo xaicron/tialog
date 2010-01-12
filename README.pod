@@ -13,6 +13,8 @@ config.pl.sampleをconfig.plにリネームして適当にいじる
 
 $ plackup tialog.psgi -p 1986
 
+=head1 config.pl
+
 =over 4
 
 =item log_path
