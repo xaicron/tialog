@@ -20,7 +20,7 @@
 ?   block content => 'body here'
         </div>
         <div id="FooterContainer">
-          <p id="Footer">Powered by Amon</p>
+          <p id="Footer">Powered by <a href="http://github.com/tokuhirom/Amon/">Amon</a></p>
         </div>
     </div>
     <script type="text/javascript" src="<?= uri_for('/static/js/back.js') ?>"></script>
